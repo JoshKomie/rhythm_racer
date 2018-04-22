@@ -1,7 +1,7 @@
 extends Sprite
 
 var target_y = 500.0
-var start_y = 0
+var start_y = -20
 var target_time
 var start_time
 var audio

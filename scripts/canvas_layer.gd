@@ -16,3 +16,14 @@ func _input(event):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+
+func set_difficulty(button_pressed):
+	if button_pressed:
+		global.mode = "hard"
+	else:
+		global.mode = "easy"
+
+
+func main_menu():
+	get_tree().change_scene("res://scenes/menu.tscn")

@@ -87,9 +87,117 @@ var level1data = [
 	{"type": 4, "time": 36.00},
 ]
 
+var level1data_hard = [
+	{"type": 1, "time": 3.69},
+	{"type": 1, "time": 5.53},
+	{"type": 2, "time": 6.00},
+	{"type": 3, "time": 6.46},
+	{"type": 4, "time": 6.92},
+	{"type": 1, "time": 7.38},
+	{"type": 1, "time": 7.84},
+	{"type": 1, "time": 8.30},
+	{"type": 2, "time": 9.23},
+	{"type": 2, "time": 9.69},
+	{"type": 2, "time": 10.15},
+	{"type": 3, "time": 11.07},
+	{"type": 3, "time": 11.53},
+	{"type": 3, "time": 12.00},
+	{"type": 4, "time": 12.92},
+	{"type": 4, "time": 13.26},
+	{"type": 4, "time": 13.61},
+	{"type": 3, "time": 14.07},
+	{"type": 4, "time": 14.30},
+	{"type": 1, "time": 14.76},
+	{"type": 2, "time": 15.23 },
+	{"type": 3, "time": 15.69},
+	{"type": 4, "time": 16.15},
+	{"type": 1, "time": 16.61},
+	{"type": 3, "time": 17.07},
+	{"type": 2, "time": 17.53},
+	{"type": 4, "time": 18.00},
+	{"type": 1, "time": 18.46},
+	{"type": 4, "time": 18.92},
+	{"type": 2, "time": 19.38},
+	{"type": 3, "time": 19.84},
+	{"type": 4, "time": 20.30},
+	{"type": 4, "time": 20.65},
+	{"type": 4, "time": 21.00},
+	{"type": 1, "time": 22.15},
+	{"type": 4, "time": 22.38},
+	{"type": 2, "time": 22.61},
+	{"type": 4, "time": 22.84},
+	{"type": 3, "time": 23.07},
+	{"type": 4, "time": 23.30},
+	{"type": 2, "time": 23.53},
+	{"type": 4, "time": 23.76},
+	{"type": 4, "time": 24.23},
+	{"type": 2, "time": 24.46},
+	{"type": 4, "time": 24.69},
+	{"type": 3, "time": 24.92},
+	{"type": 4, "time": 25.15},
+	{"type": 2, "time": 25.38},
+	{"type": 4, "time": 25.61},
+	{"type": 1, "time": 25.84},
+	{"type": 4, "time": 26.07},
+	{"type": 2, "time": 26.30},
+	{"type": 4, "time": 26.53},
+	{"type": 3, "time": 26.76},
+	{"type": 4, "time": 27.00},
+	{"type": 2, "time": 27.23},
+	{"type": 4, "time": 27.46},
+	{"type": 4, "time": 27.69},
+	{"type": 4, "time": 28.03},
+	{"type": 4, "time": 28.38},
+	{"type": 1, "time": 29.53},
+	{"type": 2, "time": 29.53},
+	{"type": 1, "time": 29.88},
+	{"type": 2, "time": 29.88},
+	{"type": 1, "time": 30.23},
+	{"type": 2, "time": 30.23},
+	{"type": 4, "time": 30.69},
+	{"type": 4, "time": 30.92},
+	{"type": 2, "time": 31.38},
+	{"type": 3, "time": 31.38},
+	{"type": 2, "time": 31.73},
+	{"type": 3, "time": 31.73},
+	{"type": 2, "time": 32.07},
+	{"type": 3, "time": 32.07},
+	{"type": 4, "time": 32.53},
+	{"type": 4, "time": 32.76},
+	{"type": 1, "time": 33.23},
+	{"type": 4, "time": 33.57},
+	{"type": 2, "time": 34.15},
+	{"type": 3, "time": 34.50},
+	{"type": 1, "time": 35.07},
+	{"type": 2, "time": 35.07},
+	{"type": 3, "time": 35.07},
+	{"type": 4, "time": 35.07},
+	{"type": 1, "time": 35.42},
+	{"type": 2, "time": 35.42},
+	{"type": 3, "time": 35.42},
+	{"type": 4, "time": 35.42},
+	{"type": 1, "time": 35.76},
+	{"type": 2, "time": 35.76},
+	{"type": 3, "time": 35.76},
+	{"type": 4, "time": 35.76},
+	{"type": 1, "time": 35.88},
+	{"type": 2, "time": 35.88},
+	{"type": 3, "time": 35.88},
+	{"type": 4, "time": 35.88},
+	{"type": 1, "time": 36.00},
+	{"type": 2, "time": 36.00},
+	{"type": 3, "time": 36.00},
+	{"type": 4, "time": 36.00},
+]
+
 func _ready():
 	set_process_input(true)
-	audio = get_node("./../AudioStreamPlayer")
+	var level1audio = get_node("./../AudioStreamPlayer")
+	var level2audio = get_node("./../AudioStreamPlayer2")
+	if global.level == 1:
+		audio = level1audio
+	else:
+		audio = level2audio
 	timer = get_node("./../timer")
 	message = get_node("./../../message")
 	car = get_tree().get_root().find_node("car", true, false)
@@ -97,8 +205,6 @@ func _ready():
 	time_label = get_node("./../../../time")
 	level_over_label = get_node("./../../../level_over_panel/level_over")
 	level_over_panel = get_node("./../../../level_over_panel")
-	print("sp=", speed_label)
-	audio.play()
 	note_scenes[1] = preload("res://scenes/note_1.tscn")
 	note_scenes[2] = preload("res://scenes/note_2.tscn")
 	note_scenes[3] = preload("res://scenes/note_3.tscn")
@@ -118,9 +224,22 @@ func _ready():
 	#	#print("key=", key, "time=", time)
 	#	note_data.push_back({"type": key, "time": time})
 	#file.close()
-	note_data = level1data;
-	build_notes()
 	
+func start():
+	audio.play()
+	if global.level == 1:
+		if global.mode == "easy":
+			note_data = level1data
+		else:
+			note_data = level1data_hard
+	elif global.level == 2:
+		if global.mode == "easy":
+			note_data = level1data
+		else:
+			note_data= level1data_hard
+	build_notes()
+	car.speed = car.base_speed
+
 func build_notes():
 	var parent = get_node("./notes_parent")
 	for data in note_data:

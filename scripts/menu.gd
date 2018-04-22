@@ -17,7 +17,9 @@ func _ready():
 
 func load_level1():
 	get_tree().change_scene("res://scenes/game.tscn")
+	global.level = 1
 
 
 func load_level2():
 	get_tree().change_scene("res://scenes/game.tscn")
+	global.level = 2
