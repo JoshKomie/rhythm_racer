@@ -22,7 +22,6 @@ func _process(delta):
 #	pass
 
 func show_message(message):
-	print("show_message", message)
 	last_time = elapsed
 	text = message
 	hide = elapsed + 0.5

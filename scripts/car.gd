@@ -6,10 +6,29 @@ extends Node2D
 var speed = 100
 var track_low = -128
 var track_high = 128
+var hits = []
+var base_speed = 100
+var speed_per_hit = 15
+var queue_size = 10
+var speed_label
+
+
+	
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	speed_label = get_node("./../../CanvasLayer/speed")
+	speed_label.text = "Speed:" + String(speed)
+	
+func add_hit(val):
+	print('add_hit')
+	hits.push_back(val)
+	if (hits.size() > queue_size):
+		hits.pop_front()
+	var new_speed = base_speed
+	for hit in hits:
+		if hit:
+			new_speed += speed_per_hit
+	speed = new_speed
+	speed_label.text = "Speed:" + String(speed)
 
 func _process(delta):
 	translate(Vector2(0, -speed * delta))

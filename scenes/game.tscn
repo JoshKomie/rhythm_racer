@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/racing.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/music_reader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/canvas_layer.gd" type="Script" id=2]
+[ext_resource path="res://scenes/music_reader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/message.gd" type="Script" id=4]
 
 [node name="Node" type="Node" index="0"]
 
@@ -16,6 +18,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 2 )
 
 [node name="music_panel" type="Panel" parent="CanvasLayer" index="0"]
 
@@ -33,23 +36,64 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="music_area" parent="CanvasLayer/music_panel" index="0" instance=ExtResource( 2 )]
+[node name="music_area" parent="CanvasLayer/music_panel" index="0" instance=ExtResource( 3 )]
 
-[node name="racing_area" type="Control" parent="CanvasLayer" index="1"]
+[node name="message" type="Label" parent="CanvasLayer/music_panel" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 399.0
-margin_top = 8.0
-margin_right = 1021.0
-margin_bottom = 602.0
+margin_left = 108.0
+margin_top = 241.0
+margin_right = 283.0
+margin_bottom = 316.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 390.0
+margin_top = 560.0
+margin_right = 470.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="speed" type="Label" parent="CanvasLayer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 396.0
+margin_top = 563.0
+margin_right = 464.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
