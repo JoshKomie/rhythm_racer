@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rhythmracing.png-4f684ef1d2fc202ea17ee3ea0b155abd.stex"
+path="res://.import/rhythmracing.png-abc99b6838eff22e4a6fae9b974afc94.stex"
 
 [deps]
 
-source_file="res://web_export/rhythmracing.png"
+source_file="res://rhythmracing.png"
 source_md5="299da75e49286e888450cf32a391ba86"
 
-dest_files=[ "res://.import/rhythmracing.png-4f684ef1d2fc202ea17ee3ea0b155abd.stex" ]
+dest_files=[ "res://.import/rhythmracing.png-abc99b6838eff22e4a6fae9b974afc94.stex" ]
 dest_md5="8d750247939fc85ff59e34547119dea2"
 
 [params]
