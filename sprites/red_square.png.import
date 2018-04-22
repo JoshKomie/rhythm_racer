@@ -7,10 +7,7 @@ path="res://.import/red_square.png-8354450c8c910cb49f054aaab2d6581e.stex"
 [deps]
 
 source_file="res://sprites/red_square.png"
-source_md5="7ab2fcff87ff3bea5c075267c3c76499"
-
 dest_files=[ "res://.import/red_square.png-8354450c8c910cb49f054aaab2d6581e.stex" ]
-dest_md5="d3b8cd690f08e1c9d49610c55a2ddb44"
 
 [params]
 

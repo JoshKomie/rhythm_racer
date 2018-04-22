@@ -7,10 +7,7 @@ path="res://.import/snowman2.png-9daa9872939f762800fb557b06951980.stex"
 [deps]
 
 source_file="res://sprites/snowman2.png"
-source_md5="dfb19eb8bdf00a8c14bea17f03b50772"
-
 dest_files=[ "res://.import/snowman2.png-9daa9872939f762800fb557b06951980.stex" ]
-dest_md5="f58963b193a2bbc57f283cfbb37fe65e"
 
 [params]
 

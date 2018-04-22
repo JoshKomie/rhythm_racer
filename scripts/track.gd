@@ -10,7 +10,7 @@ func _ready():
 	for i in range(30):
 		var inst = track_piece.instance()
 		add_child(inst)
-		inst.position.y = -512 * i
+		inst.position.y = -510 * i
 		
 	for i in range(60):
 		if randi() % 10 > 1:

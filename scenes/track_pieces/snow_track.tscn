@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sprites/snow_track_test.png" type="Texture" id=1]
+[ext_resource path="res://scripts/snow_track_sprite.gd" type="Script" id=2]
 
-[node name="track_piece" type="Sprite"]
+[node name="track_piece" type="Sprite" index="0"]
 
 position = Vector2( 0, -250 )
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 

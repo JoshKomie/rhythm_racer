@@ -13,6 +13,9 @@ var queue_size = 10
 var message
 var car
 var speed_label
+var time_label
+var level_over_label
+var level_over_panel
 var hits = []
 
 var level1data = [
@@ -91,6 +94,9 @@ func _ready():
 	message = get_node("./../../message")
 	car = get_tree().get_root().find_node("car", true, false)
 	speed_label = get_node("./../../../speed")
+	time_label = get_node("./../../../time")
+	level_over_label = get_node("./../../../level_over_panel/level_over")
+	level_over_panel = get_node("./../../../level_over_panel")
 	print("sp=", speed_label)
 	audio.play()
 	note_scenes[1] = preload("res://scenes/note_1.tscn")
@@ -127,7 +133,9 @@ func build_notes():
 	
 func _process(delta):
 	var current_time = audio.get_playback_position()
+	
 	timer.text = String(current_time)
+	time_label.text = "Time:" + String(current_time)
 	for data in note_data:
 		if current_time > data.time + input_range && !data.has("hit"):
 			data["hit"] = false
@@ -153,4 +161,22 @@ func custom_input(event):
 				data["hit"] = true
 
 
+	
+
+
+func audio_finished():
+	var correct = 0
+	var total = 0
+	for data in note_data:
+		if data.has("hit") && data["hit"]:
+			correct += 1
+		total += 1
+		
+	level_over_panel.show()
+	var text = "Level Complete!"
+	text += "\n"
+	text += "distance covered:" + String(car.position.y * -1)
+	text += "\n"
+	text += "note and rhythm accuracy: " + String(100 * (float(correct) / float(total)))
+	level_over_label.text = text
 	

@@ -7,10 +7,7 @@ path="res://.import/snow_track_test.png-85f40753a4d39ea80c2a580bf63f449e.stex"
 [deps]
 
 source_file="res://sprites/snow_track_test.png"
-source_md5="e1210cf851b48ad22f3054f9a06f918d"
-
 dest_files=[ "res://.import/snow_track_test.png-85f40753a4d39ea80c2a580bf63f449e.stex" ]
-dest_md5="2cd47536fa7469f5cdbed95b325d95fe"
 
 [params]
 

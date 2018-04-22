@@ -7,10 +7,7 @@ path="res://.import/car.png-b2ca7bee34d0a72d15f9ed0bc2f7996f.stex"
 [deps]
 
 source_file="res://sprites/car.png"
-source_md5="c6c0ff0183173a9cc65a9d122c2c6ef8"
-
 dest_files=[ "res://.import/car.png-b2ca7bee34d0a72d15f9ed0bc2f7996f.stex" ]
-dest_md5="0dc6310a649839778283b874808ea177"
 
 [params]
 

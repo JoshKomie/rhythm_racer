@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/racing.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/canvas_layer.gd" type="Script" id=2]
 [ext_resource path="res://scenes/music_reader.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/message.gd" type="Script" id=4]
+[ext_resource path="res://fonts/Russo_One.ttf" type="DynamicFontData" id=5]
 
-[node name="Node" type="Node"]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font" ]
+
+[node name="Node" type="Node" index="0"]
 
 [node name="racing_area" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -22,6 +38,7 @@ script = ExtResource( 2 )
 
 [node name="music_panel" type="Panel" parent="CanvasLayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -66,7 +83,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 390.0
-margin_top = 560.0
+margin_top = 516.0
 margin_right = 470.0
 margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -95,5 +112,160 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="time" type="Label" parent="CanvasLayer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 395.337
+margin_top = 519.878
+margin_right = 463.337
+margin_bottom = 556.878
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="level_over_panel" type="Panel" parent="CanvasLayer" index="4"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 554.595
+margin_top = 127.706
+margin_right = 918.595
+margin_bottom = 422.706
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="level_over" type="Label" parent="CanvasLayer/level_over_panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 51.167
+margin_top = 40.6853
+margin_right = 287.167
+margin_bottom = 135.685
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="A" type="Label" parent="CanvasLayer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 57.0487
+margin_top = 488.337
+margin_right = 76.0487
+margin_bottom = 524.337
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 5
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "A"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "BBCode", "Material", "Rect", "Theme", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="A2" type="Label" parent="CanvasLayer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 121.712
+margin_top = 488.673
+margin_right = 185.712
+margin_bottom = 978.673
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 5
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "S"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "BBCode", "Rect", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="A3" type="Label" parent="CanvasLayer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 187.049
+margin_top = 488.01
+margin_right = 206.049
+margin_bottom = 524.01
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 5
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "D"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "BBCode", "Rect", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="A4" type="Label" parent="CanvasLayer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 253.702
+margin_top = 489.673
+margin_right = 272.702
+margin_bottom = 525.673
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 5
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "F"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "BBCode", "Rect", "Theme", "custom_colors", "custom_fonts" ]
 
 

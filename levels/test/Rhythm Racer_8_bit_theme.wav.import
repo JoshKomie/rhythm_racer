@@ -7,10 +7,7 @@ path="res://.import/Rhythm Racer_8_bit_theme.wav-4e20c3a935e3ba0dd66ba5c5877ae5f
 [deps]
 
 source_file="res://levels/test/Rhythm Racer_8_bit_theme.wav"
-source_md5="e189154131635dfc02f58ef450e59487"
-
 dest_files=[ "res://.import/Rhythm Racer_8_bit_theme.wav-4e20c3a935e3ba0dd66ba5c5877ae5f0.sample" ]
-dest_md5="a6ea77abb520ce20e1621b8b76c36780"
 
 [params]
 
