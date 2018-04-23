@@ -18,6 +18,12 @@ var level_over_label
 var level_over_panel
 var hits = []
 
+var a_indicator
+var s_indicator
+var d_indicator
+var f_indicator
+var indicators = {}
+var hide_indicators = {}
 var level1data = [
 	{"type": 1, "time": 3.69},
 	{"type": 1, "time": 5.53},
@@ -210,6 +216,11 @@ func _ready():
 	note_scenes[3] = preload("res://scenes/note_3.tscn")
 	note_scenes[4] = preload("res://scenes/note_4.tscn")
 	
+	indicators[1] = get_node("./../../../A/a_indicator")
+	indicators[2] = get_node("./../../../A2/s_indicator")
+	indicators[3] = get_node("./../../../A3/d_indicator")
+	indicators[4] = get_node("./../../../A4/f_indicator")
+	
 	#var file = File.new()
 	#file.open("res://levels/test/notes.txt", file.READ)
 	#while (!file.eof_reached()):
@@ -226,6 +237,7 @@ func _ready():
 	#file.close()
 	
 func start():
+	print("start")
 	audio.play()
 	if global.level == 1:
 		if global.mode == "easy":
@@ -241,6 +253,7 @@ func start():
 	car.speed = car.base_speed
 
 func build_notes():
+	print('build notes')
 	var parent = get_node("./notes_parent")
 	for data in note_data:
 		var note = note_scenes[int(data.type)].instance()
@@ -248,6 +261,8 @@ func build_notes():
 		parent.add_child(note)
 		note.position.x = data.type * 64
 		note.position.y = -64
+		note.audio = audio
+		#print("notes=", note.position)
 		#note.translate(Vector2(data.type * 64, data.time * 64 * -1))
 	
 func _process(delta):
@@ -255,11 +270,17 @@ func _process(delta):
 	
 	timer.text = String(current_time)
 	time_label.text = "Time:" + String(current_time)
+	for i in hide_indicators.keys():
+		if indicators.has(i) && hide_indicators[i] < current_time:
+			indicators[i].hide()
+	
 	for data in note_data:
 		if current_time > data.time + input_range && !data.has("hit"):
 			data["hit"] = false
 			message.show_message("Miss")
-			
+			indicators[data.type].show()
+			indicators[data.type].color = Color(1, 0, 0, .5)
+			hide_indicators[data.type] = current_time + .5
 			#set_speed()
 			car.add_hit(false)
 					
@@ -269,16 +290,35 @@ func custom_input(event):
 	var s = event.is_action_pressed("note2")
 	var d = event.is_action_pressed("note3")
 	var f = event.is_action_pressed("note4")
+	var valid_input = false
 	for data in note_data:
 		if current_time > data.time - input_range && current_time < data.time + input_range:
 			if a && data.type == 1 || s && data.type == 2 || d && data.type == 3 || f && data.type == 4:
+				valid_input = true
 				message.show_message("Great!")
 				hits.push_back(true)
 				if hits.size() > queue_size:
 					hits.pop_front()
 				car.add_hit(true)
 				data["hit"] = true
-
+				indicators[data.type].show()
+				indicators[data.type].color = Color(0, 1, 0, .5)
+				hide_indicators[data.type] = current_time + .5
+	if !valid_input:
+		var i
+		if a: i = 1
+		if s: i = 2
+		if d: i = 3
+		if f: i = 4
+		if i:
+			indicators[i].show()
+			indicators[i].color = Color(1, 0, 0, .5)
+			hide_indicators[i] = current_time + .5
+		if event is InputEventKey:
+			if event.pressed:
+				car.add_hit(false)
+				car.add_hit(false)
+				car.add_hit(false)
 
 	
 

@@ -40,10 +40,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 429.878
-margin_top = 179.569
-margin_right = 619.878
-margin_bottom = 258.569
+margin_left = 433.0
+margin_top = 86.0
+margin_right = 623.0
+margin_bottom = 165.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -59,16 +59,42 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
-[node name="Button" type="Button" parent="Panel" index="1"]
+[node name="Label2" type="Label" parent="Panel" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 455.0
-margin_top = 232.0
-margin_right = 595.0
-margin_bottom = 270.0
+margin_left = 341.0
+margin_top = 115.0
+margin_right = 724.0
+margin_bottom = 316.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "You're the personal assistant of musician <musician name>. He is on tour in the magic musical car. Playing good music in the car makes it go faster! Usually, you steer the car and <musician name> plays. 
+
+But <musician name> stayed up too late last night and is too tired to play! It's up to you to get him to the show tonight. You'll have to play his music AND drive the car. The faster you can get him to the show, the better!
+
+<asdf> to play music notes, <mouse> to steer"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 448.0
+margin_top = 326.0
+margin_right = 588.0
+margin_bottom = 364.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -85,16 +111,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button2" type="Button" parent="Panel" index="2"]
+[node name="Button2" type="Button" parent="Panel" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 454.0
-margin_top = 301.0
-margin_right = 594.0
-margin_bottom = 339.0
+margin_left = 449.0
+margin_top = 383.0
+margin_right = 589.0
+margin_bottom = 421.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

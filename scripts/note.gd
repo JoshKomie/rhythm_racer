@@ -6,7 +6,6 @@ var target_time
 var start_time
 var audio
 func _ready():
-	audio = get_node("./../../../AudioStreamPlayer")
 	target_time = float(target_time)
 	start_time = target_time - 3
 
@@ -16,6 +15,7 @@ func _process(delta):
 		var percent = (current_time - start_time) / (target_time - start_time )
 		var new_y = interpolate(start_y, target_y, percent)
 		position.y = new_y
+		print("new_y=", new_y)
 		
 	
 func interpolate(a, b, f):

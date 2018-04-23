@@ -29,7 +29,6 @@ func _ready():
 	flames_tex_high = preload("res://sprites/flame3.png")
 	 
 func add_hit(val):
-	print('add_hit')
 	hits.push_back(val)
 	if (hits.size() > queue_size):
 		hits.pop_front()
@@ -41,7 +40,6 @@ func add_hit(val):
 	speed_label.text = "Speed:" + String(speed)
 
 func _process(delta):
-	print('speed', speed)
 	if speed > 0:
 		translate(Vector2(0, -speed * delta))
 	var mp = get_global_mouse_position()
