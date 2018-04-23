@@ -7,7 +7,16 @@ extends Area2D
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	var level1paths = ["res://sprites/cone.png"]
+	var level2paths = ["res://sprites/snowman1.png", "res://sprites/snowman2.png"]
+	var path = null
+	if global.level == 1:
+		path = level1paths[0]
+	elif global.level == 2:
+		path = level2paths[randi() % 2]
+	if path:
+		var texture = load(path)
+		get_node("../Sprite").set_texture(texture)
 
 
 func _on_Area2D_area_entered(area):

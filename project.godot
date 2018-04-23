@@ -39,4 +39,5 @@ note4=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 
 [rendering]
 
+environment/default_clear_color=Color( 0.578125, 0.578125, 0.578125, 1 )
 environment/default_environment="res://default_env.tres"

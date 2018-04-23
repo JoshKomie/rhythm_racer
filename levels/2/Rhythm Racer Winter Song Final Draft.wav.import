@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rhythm Racer Winter Song Final Draft.wav-4fbf2ebfb6530838e8fcefab005b6adc.sample"
+
+[deps]
+
+source_file="res://levels/2/Rhythm Racer Winter Song Final Draft.wav"
+source_md5="e8b1220dc5d3387134dc86c946bebf2b"
+
+dest_files=[ "res://.import/Rhythm Racer Winter Song Final Draft.wav-4fbf2ebfb6530838e8fcefab005b6adc.sample" ]
+dest_md5="cb2f2b2e6f41e64bf5125a37c6425bba"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

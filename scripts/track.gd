@@ -12,17 +12,27 @@ func _ready():
 	else:
 		track_piece = snow_track
 	var obstacle_scene = preload("res://scenes/obstacle.tscn")
-	for i in range(30):
+	for i in range(60):
 		var inst = track_piece.instance()
 		add_child(inst)
-		inst.position.y = -510 * i
+		inst.position.y = -508 * i
 		
-	for i in range(60):
+	for i in range(80):
 		if randi() % 10 > 1:
 			var inst = obstacle_scene.instance()
 			add_child(inst)
 			inst.position.y = -200 + -256 * i + (randi() % 50)
 			inst.position.x = -128 + randi() % 256
+	print("root=", get_tree().root)
+	var bg = get_node("./../../background")
+	print("bg=", bg)
+	if global.level == 1:
+		bg.color = Color(0.648,0.964,0.367,1.0)
+		#VisualServer.set_default_clear_color(Color(0.648,0.964,0.367,1.0))
+	elif global.level == 2:
+		bg.color = Color(0.882,0.945,0.941,1.0)
+		#VisualServer.set_default_clear_color(Color(0.882,0.945,0.941,1.0))
+		
 	
 
 		
