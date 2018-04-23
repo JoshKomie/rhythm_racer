@@ -20,7 +20,7 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	get_node("./../Particles2D").emitting = true
+	#get_node("./../Particles2D").emitting = true
 	var car = area.get_node("../")
 	car.add_hit(false)
 	car.add_hit(false)
